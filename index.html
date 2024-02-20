@@ -61,7 +61,8 @@
 
   <!-- main section -->
   <main class="relative">
-    <!-- End-to-End Travel with section -->
+
+    <!-- Banner section -->
     <div class="px-4 mt-10 relative">
       <div
         class="md:w-11/12 lg:h-[600px] mx-auto bg-[url('images/banner.png')] bg-no-repeat bg-center bg-cover rounded-2xl relative">
@@ -240,7 +241,8 @@
     <!-- Select Your Seat -->
     <section class="click-here">
       <div class="lg:flex justify-between mx-auto w-11/12 mt-12">
-        <!-- 1-part -->
+        
+        <!-- Left part -->
         <div class="mb-3 lg:w-3/5">
           <h1 class="text-xl">Select Your Seat</h1>
           <div id="click-here">
@@ -260,8 +262,8 @@
 
             <div class="grid-cols-2 lg:grid md:grid-cols-5 gap-12">
               <button class="">A</button>
-              <button class="btn btns" id="A1">A1</button>
-              <button class="btn btns" id="A2">A2</button>
+              <button onclick="selectSeat(this)" class="btn btns" id="A1">A1</button>
+              <button onclick="selectSeat(this)" class="btn btns" id="A2">A2</button>
               <button class="btn btns" id="A3">A3</button>
               <button class="btn btns" id="A4">A4</button>
               <button class="">B</button>
@@ -273,12 +275,12 @@
           </div>
         </div>
 
-        <!-- 2-part -->
+        <!-- Right part -->
         <div>
           <p class="text-xl mb-5">Select Your Seat</p>
           <div class="bg-[#1DD10026] p-4 rounded-xl">
             <div class="overflow-x-auto">
-              <table class="table">
+              <table class="table text-base">
                 <!-- head -->
                 <thead class="text-base">
                   <th>
