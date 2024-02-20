@@ -6,7 +6,9 @@ function selectSeat(event){
 
     addToCart(seatNumber)
 
+    const totalPrice = cart.childElementCount * 550;
 
+    setInnerText('totalPrice', totalPrice)
 }
 
 
@@ -19,4 +21,9 @@ function addToCart(seatNumber){
     cart.appendChild(cartItem)
 }
 
+
+function setInnerText (elementId, value) {
+    const element = document.getElementById(elementId);
+    element.innerText = value;
+}
 
