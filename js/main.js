@@ -1,17 +1,31 @@
 const cart = document.getElementById('cart');
 
+const selectedSeats = new Set()
+const allBtns = document.querySelectorAll('.btns')
 
-function selectSeat(event){
-    const seatNumber = event.innerText;
+
+for(btn of allBtns) {
+    btn.addEventListener('click', function (e) {
+        const seatNumber = this.innerText;
+
+        if(selectedSeats.has(seatNumber)) {
+            selectedSeats.add(seatNumber)
+            selectSeat(seatNumber)
+
+            // set button background color
+            e.classList.add('bg-green-500')
+        }
+    })
+}
+
+
+function selectSeat(seatNumber){
 
     addToCart(seatNumber)
 
     // calculate total price
     const totalPrice = cart.childElementCount * 550;
     setInnerText('totalPrice', totalPrice)
-
-    // set button background color
-    event.classList.add('bg-green-500')
 }
 
 
@@ -26,7 +40,8 @@ function addToCart(seatNumber){
 
 
 function getDiscount () {
-    const input = document.getElementById('coupon-input').value;
+    const inputElement = document.getElementById('coupon-input');
+    const input = inputElement.value;
     const totalPrice = parseFloat(getInnerText('discountPrice')).toFixed(2)
     
     if(input === 'NEW15'){
@@ -40,6 +55,9 @@ function getDiscount () {
     else{
         alert('Invalid coupon code. Please enter valid coupon.')
     }
+
+    // reset input field
+    input.value = ''    
 }
 
 
