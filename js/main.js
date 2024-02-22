@@ -13,7 +13,7 @@ for(btn of allBtns) {
             selectSeat(seatNumber)
 
             // set button background color
-            e.classList.add('bg-green-500')
+            e.classList.add('bg-green-400')
         }
     })
 }
